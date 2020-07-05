@@ -49,7 +49,7 @@ namespace JWTAuthentication.WebApi
                     b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
 
-            
+
             //Adding Athentication - JWT
             services.AddAuthentication(options =>
             {
@@ -68,7 +68,7 @@ namespace JWTAuthentication.WebApi
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         ClockSkew = TimeSpan.Zero,
-                        
+
                         ValidIssuer = _configuration["JWT:Issuer"],
                         ValidAudience = _configuration["JWT:Audience"],
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]))
